@@ -2,7 +2,7 @@ from __future__ import annotations
 from git import RemoteProgress 
 from rich import console, progress
 
-
+# From https://stackoverflow.com/a/71285627/16846310
 class GitRemoteProgress(RemoteProgress):
     OP_CODES = [
         "BEGIN",
