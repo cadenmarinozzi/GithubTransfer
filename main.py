@@ -2,7 +2,7 @@ import requests, sys, os, subprocess
 from git import Repo, remote, exc
 from requests.auth import HTTPBasicAuth
 from github import Github, GithubException
-
+from remoteProgress.remoteProgress import GitRemoteProgress
 
 assert len(sys.argv) == 4, 'A from username, to username and token for the to account must be specified!';
 
@@ -26,7 +26,7 @@ for repository in repositories:
 
     # Clone the repository to the local system
     try:
-        Repo.clone_from(repoUrl, localRepoPath);
+        Repo.clone_from(repoUrl, localRepoPath, progress=GitRemoteProgress());
     except (exc.GitCommandError):
         print(f'warning: {repoName} already exists in the local repository directory. Continuing without cloning');
 
