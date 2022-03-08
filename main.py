@@ -4,7 +4,7 @@ from requests.auth import HTTPBasicAuth
 from github import Github, GithubException
 from remoteProgress.remoteProgress import GitRemoteProgress
 
-assert len(sys.argv) == 4, 'A from username, to username and token for the to account must be specified!';
+assert len(sys.argv) == 4, 'A from username, to username and token for the "to" account must be specified!';
 
 fromUsername = sys.argv[1];
 toUsername = sys.argv[2];
