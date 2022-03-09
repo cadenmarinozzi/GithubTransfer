@@ -4,7 +4,7 @@ Thanks for contributing to GitHub Transfer!
 ## How to contribute
 To contribute a change to GitHub Transfer, make sure to follow these guidelines:
 * Code must be in camelCase
-* Code must have proper comments to document the change or comments throughout the code to explain any changes
+* Code must have proper comments to document the change or comments throughout the code to explain any changes \
 That's it! You may use any code style that is relatively close to the current code style, but this is not enforced.
 
 ## What you will need
