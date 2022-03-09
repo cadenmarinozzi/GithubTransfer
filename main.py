@@ -16,6 +16,9 @@ user = Github(toUsername, token).get_user();
 
 repositories = requests.get(f'https://api.github.com/users/{fromUsername}/repos').json();
 
+if ('message' in repositories and repositories['message'] == 'Not Found'):
+    print(f'User "{fromUsername}" not found! Make sure the user exists and the username is typed correctly');
+
 if (not os.path.isdir('./repos')): os.mkdir('./repos');
 
 for repository in repositories:
@@ -29,7 +32,6 @@ for repository in repositories:
         Repo.clone_from(repoUrl, localRepoPath, progress=GitRemoteProgress());
     except (exc.GitCommandError):
         print(f'warning: {repoName} already exists in the local repository directory. Continuing without cloning');
-
 
     # Create a repository on the new account
     try:
